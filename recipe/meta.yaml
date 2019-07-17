@@ -1,16 +1,16 @@
 {% set name = "esutil" %}
-{% set version = "0.6.2.5" %}
+{% set version = "0.6.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6e7b4e245fb5b3a6e300aa0eb7633d1d98282514eaba00c7bddabaf46e51fb7a
+  url: https://github.com/esheldon/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: 42adc911a75c5c458465d3824c0c1d601bf9b35126d12f6166be52b6365e8680
 
 build:
-  number: 1000
+  number: 0
   skip: True  # [win]
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
