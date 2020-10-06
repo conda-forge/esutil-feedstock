@@ -1,5 +1,5 @@
 {% set name = "esutil" %}
-{% set version = "0.6.4" %}
+{% set version = "0.6.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/esheldon/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 92116bea978abfac4e5b0d682e83e6e0770b8014df0ab38bd8fb929c0b6ed227
+  sha256: 97a892f7d592da76dce8bca80d2078231c9fd84bdafe6cce57fa487302616b55
 
 build:
   number: 0
-  skip: True  # [win]
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  skip: true  # [win]
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -36,7 +36,7 @@ about:
   home: https://github.com/esheldon/esutil
   license: GPLv2
   license_family: GPL
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
+  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE
   summary: |
     A python package including a wide variety of utilities, focused primarily
     on numerical python, statistics, and file input/output. Includes
