@@ -1,5 +1,5 @@
 {% set name = "esutil" %}
-{% set version = "0.6.6" %}
+{% set version = "0.6.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/esheldon/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: fc50ac82e95bdedf15c087df4058a1d72bf2955527afe9d8e7f76953df24c85f
+  sha256: c4a354b31eb585111fadaade8f4108df3c5e392e999bf796ec111634212adf3e
 
 build:
   number: 0
@@ -32,8 +32,6 @@ requirements:
 test:
   imports:
     - esutil
-  commands:
-    - python -c "import esutil; esutil.test()"
 
 about:
   home: https://github.com/esheldon/esutil
