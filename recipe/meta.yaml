@@ -1,5 +1,5 @@
 {% set name = "esutil" %}
-{% set version = "0.6.7" %}
+{% set version = "0.6.7.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/esheldon/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: c4a354b31eb585111fadaade8f4108df3c5e392e999bf796ec111634212adf3e
+  sha256: c6a972eb089de6539d8cd0e21784dec5137c1aaba178078397c74f48bcb53377
 
 build:
   number: 0
