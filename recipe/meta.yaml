@@ -30,12 +30,8 @@ requirements:
     - {{ pin_compatible('numpy') }}
 
 test:
-  requires:
-    - pytest
   imports:
     - esutil
-  commands:
-    - pytest -vvs esutil
 
 about:
   home: https://github.com/esheldon/esutil
