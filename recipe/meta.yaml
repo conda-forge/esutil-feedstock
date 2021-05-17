@@ -35,7 +35,7 @@ test:
   imports:
     - esutil
   commands:
-    - pytest --pyargs esutil
+    - pytest -vvs esutil
 
 about:
   home: https://github.com/esheldon/esutil
