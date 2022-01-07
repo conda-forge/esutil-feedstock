@@ -3,7 +3,7 @@ About esutil
 
 Home: https://github.com/esheldon/esutil
 
-Package license: GPLv2
+Package license: GPL-2.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/esutil-feedstock/blob/master/LICENSE.txt)
 
