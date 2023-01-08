@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/esheldon/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 5aee1adc037bb38c0325f31690210756524cb0fd6dbf545693efc15dab73a4b6
+  patches:
+    - 0000-no-std-cpp11-osx.patch  # [osx]
 
 build:
   number: 0
