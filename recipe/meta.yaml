@@ -1,5 +1,5 @@
 {% set name = "esutil" %}
-{% set version = "0.6.11" %}
+{% set version = "0.6.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/esheldon/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 8549c51477bef2af459d0b0874800058ba5dd905ebf010b722725714763fce37
+  sha256: bd7c50bf44940825b7c24a4a4ece04bb2446432e16ff688688ea16c17ff7362e
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -20,6 +20,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - python
