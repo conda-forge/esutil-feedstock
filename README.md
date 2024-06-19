@@ -321,6 +321,3 @@ Feedstock Maintainers
 
 * [@beckermr](https://github.com/beckermr/)
 
-
-<!-- dummy commit to enable rerendering -->
-
