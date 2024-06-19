@@ -31,6 +31,9 @@ requirements:
 test:
   imports:
     - esutil
+    - esutil.htm
+    - esutil.stat
+    - esutil.cosmology
 
 about:
   home: https://github.com/esheldon/esutil
