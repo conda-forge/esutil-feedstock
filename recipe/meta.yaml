@@ -12,7 +12,7 @@ source:
 build:
   number: 1
   script: 
-    - export ${CFLAGS}="${CFLAGS} -Wno-incompatible-pointer-types"  #[linux]
+    - export ${CFLAGS}="${CFLAGS} -Wno-incompatible-pointer-types"  # [linux]
     - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
