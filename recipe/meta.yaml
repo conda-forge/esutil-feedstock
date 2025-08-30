@@ -10,8 +10,10 @@ source:
   sha256: a0fab9771ae00aa3079c0389488f7b684ee9a9cb1c66d152156f08bbcfd622c8
 
 build:
-  number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  number: 1
+  script: 
+    - export CFLAGS="${CFLAGS} -Wno-incompatible-pointer-types"  # [linux]
+    - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
