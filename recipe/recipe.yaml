@@ -48,15 +48,13 @@ tests:
       pip_check: false
 
 about:
+  homepage: https://github.com/esheldon/esutil
   license: GPL-2.0-only
   license_file: ${{ env.get("RECIPE_DIR") }}/LICENSE
   summary: |
     A python package including a wide variety of utilities, focused primarily
     on numerical python, statistics, and file input/output. Includes
     specialized tools for astronomers.
-
-
-  homepage: https://github.com/esheldon/esutil
 
 extra:
   recipe-maintainers:
