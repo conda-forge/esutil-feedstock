@@ -1,0 +1,63 @@
+schema_version: 1
+
+context:
+  name: esutil
+  version: "0.6.16"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/esheldon/${{ name }}/archive/${{ version }}.tar.gz
+  sha256: a0fab9771ae00aa3079c0389488f7b684ee9a9cb1c66d152156f08bbcfd622c8
+
+build:
+  number: 3
+  script:
+    - if: linux
+      then: export CFLAGS="${CFLAGS} -Wno-incompatible-pointer-types"
+    - ${{ PYTHON }} -m pip install . --no-deps -vv
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - if: build_platform != target_platform
+      then: numpy
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+  host:
+    - python
+    - pip
+    - setuptools
+    - numpy
+  run:
+    - python
+
+tests:
+  - python:
+      imports:
+        - esutil
+        - esutil.htm
+        - esutil.stat
+        - esutil.cosmology
+      pip_check: false
+
+about:
+  license: GPL-2.0-only
+  license_file: ${{ env.get("RECIPE_DIR") }}/LICENSE
+  summary: |
+    A python package including a wide variety of utilities, focused primarily
+    on numerical python, statistics, and file input/output. Includes
+    specialized tools for astronomers.
+
+
+  homepage: https://github.com/esheldon/esutil
+
+extra:
+  recipe-maintainers:
+    - beckermr
