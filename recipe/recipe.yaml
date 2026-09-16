@@ -1,19 +1,18 @@
 schema_version: 1
 
 context:
-  name: esutil
-  version: "0.6.16"
+  version: "0.6.17"
 
 package:
-  name: ${{ name|lower }}
+  name: esutil
   version: ${{ version }}
 
 source:
-  url: https://github.com/esheldon/${{ name }}/archive/${{ version }}.tar.gz
-  sha256: a0fab9771ae00aa3079c0389488f7b684ee9a9cb1c66d152156f08bbcfd622c8
+  url: https://github.com/esheldon/esutil/archive/${{ version }}.tar.gz
+  sha256: 59ed1b93db18c71c5483f12938b7bb76e5fabccfdf0f7371565f2ddce7008587
 
 build:
-  number: 3
+  number: 0
   script:
     - if: linux
       then: export CFLAGS="${CFLAGS} -Wno-incompatible-pointer-types"
@@ -32,8 +31,8 @@ requirements:
     - ${{ compiler('cxx') }}
   host:
     - python
-    - pip =25
-    - setuptools =80
+    - pip
+    - setuptools
     - numpy
   run:
     - python
